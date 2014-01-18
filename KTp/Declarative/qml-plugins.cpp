@@ -26,16 +26,16 @@
 #include <QtDeclarative/QDeclarativeContext>
 
 
-#include "conversation.h"
 #include "conversations-model.h"
 #include "hide-window-component.h"
-#include "messages-model.h"
 #include "pinned-contacts-model.h"
 #include "contact-pin.h"
 #include "filtered-pinned-contacts-proxy-model.h"
 #include "telepathy-manager.h"
 
 #include "KTp/types.h"
+#include "KTp/conversation.h"
+#include "KTp/messages-model.h"
 #include "KTp/Models/contacts-filter-model.h"
 #include "KTp/Models/contacts-model.h"
 #include "KTp/Models/accounts-list-model.h"

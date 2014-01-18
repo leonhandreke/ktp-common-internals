@@ -29,7 +29,7 @@
 #include "messages-model.h"
 
 class MessagesModel;
-class Conversation : public QObject
+class KTP_EXPORT Conversation : public QObject
 {
     Q_OBJECT
 

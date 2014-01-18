@@ -29,7 +29,7 @@
 
 #include <KTp/message-processor.h>
 #include <KTp/message-context.h>
-#include <KTp/Logger/scrollback-manager.h>
+//#include <KTp/Logger/scrollback-manager.h>
 
 class MessagePrivate
 {
@@ -52,7 +52,7 @@ class MessagesModel::MessagesModelPrivate
   public:
     Tp::TextChannelPtr textChannel;
     Tp::AccountPtr account;
-    ScrollbackManager *logManager;
+    //ScrollbackManager *logManager;
     QList<MessagePrivate> messages;
     // For fast lookup of original messages upon receipt of a message delivery report.
     QHash<QString /*messageToken*/, QPersistentModelIndex> messagesByMessageToken;
@@ -80,14 +80,14 @@ MessagesModel::MessagesModel(const Tp::AccountPtr &account, QObject *parent) :
     d->account = account;
     d->visible = false;
 
-    d->logManager = new ScrollbackManager(this);
+    //d->logManager = new ScrollbackManager(this);
     d->logsLoaded = false;
-    connect(d->logManager, SIGNAL(fetched(QList<KTp::Message>)), SLOT(onHistoryFetched(QList<KTp::Message>)));
+    //connect(d->logManager, SIGNAL(fetched(QList<KTp::Message>)), SLOT(onHistoryFetched(QList<KTp::Message>)));
 
     //Load configuration for number of message to show
     KConfig config(QLatin1String("ktelepathyrc"));
     KConfigGroup tabConfig = config.group("Behavior");
-    d->logManager->setScrollbackLength(tabConfig.readEntry<int>("scrollbackLength", 10));
+    //d->logManager->setScrollbackLength(tabConfig.readEntry<int>("scrollbackLength", 10));
 }
 
 Tp::TextChannelPtr MessagesModel::textChannel() const
@@ -132,11 +132,11 @@ void MessagesModel::setTextChannel(const Tp::TextChannelPtr &channel)
 
     d->textChannel = channel;
 
-    d->logManager->setTextChannel(d->account, d->textChannel);
+    //d->logManager->setTextChannel(d->account, d->textChannel);
 
     //Load messages unless they have already been loaded
     if(!d->logsLoaded) {
-        d->logManager->fetchScrollback();
+        //d->logManager->fetchScrollback();
     }
 
     QList<Tp::ReceivedMessage> messageQueue = channel->messageQueue();

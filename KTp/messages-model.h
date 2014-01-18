@@ -27,7 +27,7 @@
 
 #include <KTp/message.h>
 
-class MessagesModel : public QAbstractListModel
+class KTP_EXPORT MessagesModel : public QAbstractListModel
 {
     Q_OBJECT
     Q_ENUMS(MessageType)

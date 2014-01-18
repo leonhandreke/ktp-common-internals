@@ -5,10 +5,8 @@ include_directories (${CMAKE_CURRENT_BINARY_DIR}
 
 set (ktp_qml_plugin_SRCS
     ${KTP_GLOBAL_SOURCES}
-    conversation.cpp
     conversations-model.cpp
     hide-window-component.cpp
-    messages-model.cpp
     pinned-contacts-model.cpp
     filtered-pinned-contacts-proxy-model.cpp
     contact-pin.cpp

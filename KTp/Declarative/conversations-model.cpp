@@ -18,8 +18,9 @@
 
 
 #include "conversations-model.h"
-#include "conversation.h"
-#include "messages-model.h"
+
+#include "KTp/conversation.h"
+#include "KTp/messages-model.h"
 
 #include <KDebug>
 

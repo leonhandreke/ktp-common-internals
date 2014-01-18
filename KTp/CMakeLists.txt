@@ -33,6 +33,8 @@ set (ktp_common_internals_private_SRCS
      pending-wallet.cpp
      wallet-interface.cpp
      wallet-utils.cpp
+     conversation.cpp
+     messages-model.cpp
 )
 
 set (ktp_common_internals_private_HDRS
@@ -63,6 +65,8 @@ set (ktp_common_internals_private_HDRS
      wallet-utils.h
      types.h
      ktp-export.h
+     conversation.h
+     messages-model.h
 )
 
 set (ktp_private_LIBS
