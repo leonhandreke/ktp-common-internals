@@ -154,6 +154,11 @@ bool Conversation::isValid()
     return d->valid;
 }
 
+void Conversation::setVisibleToUser(bool visible)
+{
+    d->messages->setVisibleToUser(visible);
+}
+
 void Conversation::onChannelInvalidated(Tp::DBusProxy *proxy, const QString &errorName, const QString &errorMessage)
 {
     kDebug() << proxy << errorName << ":" << errorMessage;

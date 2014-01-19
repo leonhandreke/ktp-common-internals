@@ -223,11 +223,12 @@ void MessagesModel::onMessageReceived(const Tp::ReceivedMessage &message)
         int length = rowCount();
         beginInsertRows(QModelIndex(), length, length);
 
-        d->messages.append(KTp::MessageProcessor::instance()->processIncomingMessage(
-                               message, d->account, d->textChannel));
+        KTp::Message newMessage = KTp::MessageProcessor::instance()->processIncomingMessage(
+                    message, d->account, d->textChannel);
+        d->messages.append(newMessage);
 
         endInsertRows();
-
+        Q_EMIT(messageReceived(newMessage));
         if (d->visible) {
             acknowledgeAllMessages();
         } else {

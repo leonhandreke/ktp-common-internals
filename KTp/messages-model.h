@@ -80,6 +80,7 @@ class KTP_EXPORT MessagesModel : public QAbstractListModel
     bool shouldStartOpened() const;
 
   Q_SIGNALS:
+    void messageReceived(KTp::Message message);
     void visibleToUserChanged(bool visible);
     void unreadCountChanged(int unreadMesssagesCount);
 

@@ -54,6 +54,8 @@ public:
     QIcon presenceIcon() const;
     QIcon avatar() const;
 
+    void setVisibleToUser(bool visible);
+
     /**
      * Target contact of this conversation. May be null if conversation is a group chat.
      */
